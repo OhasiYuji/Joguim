@@ -30,7 +30,9 @@ function verificarChute() {
             exibirTextoNaTela('p', `O numero secreto é maior que ${chute}. Lhe resta ${tentativas-1} tentativas`);
         }
         
+        limparCampo();
         tentativas--;
+        
 
         if (tentativas == 0) {
             exibirTextoNaTela('h1', 'Suas tentativas acabaram!');
@@ -47,4 +49,9 @@ function reiniciarJogo () {
 
 function gerarNumero() {
     return parseInt(Math.random() * 1000 + 1);
+}
+
+function limparCampo() {
+    chute = document.querySelector('input');
+    chute.value = '';
 }
